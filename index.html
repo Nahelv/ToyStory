@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toy Story</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <img id="logo-ts" src="images/toy-story-logo.png" alt="Logo de Toy Story">
+    <div id="card-container">
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var cardContainer = document.getElementById("card-container");
+
+            var jsonData = [
+                { "nom": "Woody", "vie": "25", "discretion": "22", "action": "40", "photo": "images/woody.png", "info": "Les mains en l'air ! Le shérif Woody est là pour faire régner l'ordre dans la chambre d'Andy.", "color": "darkorange", "fond": "images/giant-bg.jpg" },
+                { "nom": "Buzz l'éclair", "vie": "35", "discretion": "15", "action": "70", "photo": "images/buzz.png", "info": "Vers l'infini et au-delà !", "color": "#4ec23c", "fond": "images/barbarian-bg.jpg" },
+                { "nom": "Pil Poil", "vie": "14", "discretion": "10", "action": "60", "photo": "images/pilpoil.png", "info": "Il cherche à éliminer le grand méchant Zurg. Buzz sait voler grâce à ses ailes déployables.", "color": "#31d0c3", "fond": "images/goblin-bg.jpg" },
+                { "nom": "Alien", "vie": "11", "discretion": "12", "action": "10", "photo": "images/alien.png", "info": "Pas fufute mais très gentil", "color": "darkorange", "fond": "images/giant-bg.jpg" },
+                { "nom": "Rex", "vie": "40", "discretion": "24", "action": "50", "photo": "images/rex.png", "info": "Tout dans les muscles !", "color": "#4ec23c", "fond": "images/barbarian-bg.jpg" },
+                { "nom": "Jessie", "vie": "37", "discretion": "45", "action": "65", "photo": "images/jessie.png", "info": "Téméraire et intrépide !", "color": "#31d0c3", "fond": "images/goblin-bg.jpg" },
+                { "nom": "Sergent", "vie": "12", "discretion": "60", "action": "75", "photo": "images/sergent.png", "info": "Au service de tous !", "color": "darkorange", "fond": "images/giant-bg.jpg" },
+                { "nom": "Bayonne", "vie": "25", "discretion": "30", "action": "20", "photo": "images/bayonne.png", "info": "Tranquille et économe", "color": "#4ec23c", "fond": "images/barbarian-bg.jpg" },
+                { "nom": "ZigZag", "vie": "35", "discretion": "30", "action": "40", "photo": "images/zigzag.png", "info": "Toujours prêt à se plier en 4 pour Woody", "color": "#31d0c3", "fond": "images/goblin-bg.jpg" },
+                { "nom": "Monsieur Patate", "vie": "18", "discretion": "35", "action": "30", "photo": "images/patate.png", "info": "Grincheux mais sympa", "color": "darkorange", "fond": "images/giant-bg.jpg" }
+            ];
+
+            jsonData.forEach(function(toy) {
+                var card = document.createElement("div");
+                card.className = "toy-card";
+
+                card.innerHTML = `
+            <div class="toy-card__image" style="background-image: url(${toy.fond})">
+                <img src="${toy.photo}" alt="${toy.nom}">
+            </div>
+            <div class="toy-card__name" style="background: ${toy.color}">${toy.nom}</div>
+            <div class="toy-card__description">${toy.info}</div>
+            <div class="toy-card__unit-stats" style="background: ${toy.color}">
+                <div class="one-third">
+                    <div class="stat">${toy.vie}</div>
+                    <div class="stat-value">Vie</div>
+                </div>
+                <div class="one-third">
+                    <div class="stat">${toy.discretion}</div>
+                    <div class="stat-value">Discrétion</div>
+                </div>
+                <div class="one-third">
+                    <div class="stat">${toy.action}</div>
+                    <div class="stat-value">Action</div>
+                </div>
+            </div>
+        `;
+
+                cardContainer.appendChild(card);
+            });
+        });
+    </script>
+</body>
+
+</html>

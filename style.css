@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+}
+
+body {
+  background-image: url("images/parquet.jpg");
+}
+
+#logo-ts {
+  margin: 20px;
+  width: 120px;
+  rotate: -30deg;
+}
+
+#card-container {
+  margin: -40px 150px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+}
+
+.toy-card {
+  width: 300px;
+  /*height: 250px;*/
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+.toy-card__image {
+  background-size: 100%;
+  border-radius: 20px 20px 0 0;
+}
+.toy-card__image img {
+  padding-top: 5px;
+  height: 250px;
+  margin: 0 auto;
+  display: block;
+}
+.toy-card__name {
+  width: 100%;
+  text-align: center;
+  font-size: 23px;
+  font-weight: 800;
+  background-color: white;
+}
+.toy-card__description {
+  color: darkgrey;
+  font-size: 14px;
+  padding: 20px 10px;
+  text-align: center;
+  background-color: white;
+  border-radius: 0 0 20px 20px;
+}
+.toy-card__unit-stats {
+  opacity: 0;
+  z-index: -1;
+  transform: translateY(-90px);
+  background-color: grey;
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  border-radius: 0 0 20px 20px;
+  transition: all 0.3s ease-out;
+}
+.toy-card__unit-stats .one-third {
+  padding: 20px 0 20px 0;
+  text-align: center;
+}
+.toy-card__unit-stats .one-third:not(:last-child) {
+  border-right: 1px solid rgba(0, 0, 0, 0.3);
+}
+.toy-card__unit-stats .one-third .stat {
+  font-size: 25px;
+  padding-bottom: 6px;
+}
+.toy-card__unit-stats .one-third .stat-value {
+  text-transform: uppercase;
+  font-size: 11px;
+}
+.toy-card:hover {
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+  height: fit-content;
+}
+.toy-card:hover .toy-card__image img {
+  transform: translateY(-25px) scale(1.2);
+  transition: all 0.3s ease-out;
+}
+.toy-card:hover .toy-card__description {
+  border-radius: 0;
+}
+.toy-card:hover .toy-card__unit-stats {
+  opacity: 1;
+  z-index: 1;
+  height: 90px;
+  transform: translateY(0);
+  transition: all 0.3s ease-out;
+}
+
+/*# sourceMappingURL=style.css.map */
